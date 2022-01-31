@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jensinthomas/FileEX.git"
+  },
   "build": {
     "appId": "com.example.electron-boilerplate",
     "files": [
@@ -24,6 +28,10 @@
   },
   "author": "Jensin",
   "license": "ISC",
+    "bugs": {
+    "url": "https://github.com/jensinthomas/FileEX/issues"
+  },
+  "homepage": "https://github.com/jensinthomas/FileEX#readme",
   "dependencies": {
     "electron": "^4.1.0",
     "jquery": "^3.5.0"
