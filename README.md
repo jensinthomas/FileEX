@@ -19,6 +19,7 @@ You can exit the window at any time by normal means, including from the command 
 Instructions
 
 In the FileEX application you can:
+ 
  Menu:
  1. Open/Open in New Window - if its a file it will just open or if its a folder you can choose to open it in a new window.
  2. Create New File -  create a new text file in the current directory (needs refresh).
