@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>FileEX</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="../css/sift.css"/>
+    </head>
+    <body onload="init()" class='matte light'>
+        <div id="context">
+            <table id="context-table" class="itemlist hover-enabled">
+            </table>
+        </div>
+        <div id="titlewrapper">
+            <div id="titlebar">
+                <div id="mn_btn" class="topbtn" onclick="menuPanel()"><img src="../img/mn.png"/></div>
+                <div id="titleplace">
+                    <p>FileEX</p>
+                </div>
+                <div id="min_btn" class="topbtn" onclick="win.minimize()"><img src="../img/min.png"/></div>
+                <div id="rsz_btn" class="topbtn" onclick="resizeWin()"><img src="../img/max.png"/></div>
+                <div id="cls_btn" class="topbtn" onclick="win.close()"><img src="../img/cls.png"/></div>
+            </div>
+            <div id="menupanel">
+                    <div id="nWPanelButton" class="panelItem" onclick="siftlib.openItems(pathString, Object.entries(document.getElementsByClassName('select')))">
+                            <div class="panelItemSubject"><img src="../img/opn96.png"></div>
+                            <div class="panelItemText">Open</div>
+                        </div>
+                        <div  class="panelItem" id="newfilPanelButton" onclick="siftlib.newfileItems(pathString)">
+                            <div class="panelItemSubject"><img src="../img/file.png"></div>
+                            <div class="panelItemText">New File</div>
+                        </div>
+                        <div id="newfolPanelButton" class="panelItem" onclick="siftlib.newfolderItems(pathString)">
+                            <div class="panelItemSubject"><img src="../img/fold.png"></div>
+                            <div class="panelItemText">New Folder</div>
+                        </div> 
+  
+                        <div id="cutPanelButton" class="panelItem" onclick="siftlib.addItems(pathString, Object.entries(document.getElementsByClassName('select')), 1)">
+                            <div class="panelItemSubject"><img src="../img/cut96.png"></div>
+                            <div class="panelItemText">Cut</div>
+                        </div>
+
+                        <div id="copyPanelButton" class="panelItem" onclick="siftlib.addItems(pathString, Object.entries(document.getElementsByClassName('select')), 0)">
+                            <div class="panelItemSubject"><img src="../img/cop96.png"></div>
+                            <div class="panelItemText">Copy</div>
+                        </div>
+
+                        <div id="pastePanelButton" class="panelItem" onclick="siftlib.dumpItems(pathString)">
+                            <div class="panelItemSubject"><img src="../img/pst96.png"></div>
+                            <div class="panelItemText">Paste</div>
+                        </div>   
+                        <div id="delPanelButton" class="panelItem" onclick="siftlib.deleteItems(pathString, Object.entries(document.getElementsByClassName('select')))">
+                            <div class="panelItemSubject"><img src="../img/del96.png"></div>
+                            <div class="panelItemText">Delete</div>
+                        </div>
+
+                    <div id="themeswitch" class="panelItem" onclick="setTheme()">
+                        <div class="panelItemSubject"><img src=""></div>
+                        <div class="panelItemText"></div>
+                    </div>
+            </div>
+        </div>
+        <div id="pathboxcontainer">
+        <div id="bck_btn" class="topbtn" onclick="goTo(goBack(), 0)"><img src="../img/bck.png"/></div>
+        <div id="fwd_btn" class="topbtn" onclick="goTo(goForth(), 0)"><img src="../img/fwd.png"/></div>
+        <div id="up_btn" class="topbtn" onclick="goTo(path.parse(pathString).dir, 1)"><img src="../img/up.png"/></div>
+        <input type="text" id="pathbox" onkeydown="textFieldKeyHandler(event)"></input>
+        <div id="hm_btn" class="topbtn" onclick="goTo(home, 1)"><img src="../img/hm.png"/></div>
+        <div id="rf_btn" class="topbtn" onclick="goTo(document.getElementById('pathbox').value, 0)"><img src="../img/rf.png"/></div>
+        </div>
+            <div id="content-box-holder">
+                <table class="itemlist hover-enabled" id="filelist">
+                </table>
+            </div>
+        <script src="../js/v2.js"></script>
+
+
+    </body>
+</html>

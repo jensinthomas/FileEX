@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>FileEX</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="../css/sift.css"/>
+    </head>
+    <body class="dark matte">
+        <div id="titlewrapper">
+            <div id="titlebar">
+                <div style="padding: 17.5px"></div>
+                <div id="titleplace">
+                    <p>Error</p>
+                </div>
+                <div id="cls_btn" class="topbtn" onclick="nwin.close()"><img src="../img/cls.png"/></div>
+            </div>
+        </div>
+        <div class="subject-holder"><img src="../img/wrn.png" class="subject"></div>
+        <div id="warn-holder"></div>
+        <div class="btmbtn" onclick="nwin.close(); nwin = null;"><img src="../img/ok.png"/><div class="btmbtnText">Ok</div></div>
+            <script>
+                const electron = require('electron')
+                window.$ = window.jquery = require('jquery');
+                let nwin = require('electron').remote.getCurrentWindow();
+                nwin.title = 'Error';
+                electron.ipcRenderer.on('erm', (evt, alertText) => {
+                    console.log(alertText);
+                    $('#warn-holder').html(alertText);
+                });
+            </script>
+
+</body>
+</html>

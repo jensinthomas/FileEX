@@ -1,0 +1,230 @@
+.vibrant{
+  --transparency: .5;
+}
+.matte{
+  --transparency: 1;
+}
+.light{
+  --constant-invert: 0;
+  --constant-primary: 255;
+  --invert: rgba(0, 0, 0, var(--transparency));
+  --primary: rgba(255, 255, 255, var(--transparency));
+  --invert-dis: rgba(127, 127, 127, var(--transparency));
+  --secondary: rgba(242, 242, 242, var(--transparency));
+  --trietary: rgba(208, 208, 208, var(--transparency));
+  --icon-trans: 0%;
+  --icon-trans-dis: 50%;
+  --shadow: rgba(0, 0, 0, .25);
+  --shadow-fade: rgba(0, 0, 0, .22);
+}
+.dark{
+  --constant-invert: 255;
+  --constant-primary: 0;
+  --invert: rgba(255, 255, 255, var(--transparency));
+  --primary: rgba(0, 0, 0, var(--transparency));
+  --invert-dis: rgba(127, 127, 127, var(--transparency));
+  --secondary: rgba(13, 13, 13, var(--transparency));
+  --trietary: rgba(32, 32, 32, var(--transparency));
+  --icon-trans: 100%;
+  --icon-trans-dis: 50%;
+  --shadow: rgba(0, 0, 0, .25);
+  --shadow-fade: rgba(0, 0, 0, .22);
+}
+.deep{
+  --constant-invert: 255;
+  --constant-primary: 0;
+  --invert: rgba(255, 255, 255, var(--transparency));
+  --primary: rgba(0, 25, 112, var(--transparency));
+  --invert-dis: rgba(127, 127, 127, var(--transparency));
+  --secondary: rgba(0, 34, 123, var(--transparency));
+  --trietary: rgba(0, 41, 132, var(--transparency));
+  --icon-trans: 100%;
+  --icon-trans-dis: 50%;
+  --shadow: rgba(0, 0, 0, .25);
+  --shadow-fade: rgba(0, 0, 0, .22);
+}
+body {
+    margin: 0px;
+    overflow: hidden;
+    background-color: var(--primary);
+    color: var(--invert);
+    font-family: 'Roboto', sans-serif;
+}
+#titlebar{
+  display: flex;
+  align-content: center;
+  width: 100%;
+  height: 35px;
+  -webkit-app-region: drag;
+}
+#content-box-holder{
+  height: Calc(100% - 70px);
+  overflow-y: scroll;
+}
+#titleplace{
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  align-self: center;
+  margin: auto;
+  align-content: center;
+  text-align: center;
+  background-color: var(--primary);
+}
+#titleplace p{
+  margin: 8px;
+}
+#cd{
+  display: none;
+}
+#menupanel{
+  height: 105;
+  width: 150%;
+  display: flex;
+}
+#warn-holder{
+  text-align: center;
+}
+  .itemlist {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--primary)
+  }
+  #pathboxcontainer{
+      width: 100%;
+      display: flex;
+  }
+  #pathbox, #renbox{
+    font-size: 16px;
+    border: 0px;
+    width: -webkit-fill-available;
+    font-family: 'Roboto', sans-serif;
+    color: var(--invert);
+    outline: none;
+  }
+  .disable{
+    color: var(--invert-dis) !important;
+  }
+  .disable img{
+    filter: invert(var(--icon-trans-dis)) !important;
+  }
+  #pathbox{
+    background-color: var(--primary);
+    padding-left: 8px;
+  }
+  #renbox{
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px;
+  }
+  .itemlist tr:nth-child(odd){
+    background-color: var(--secondary);
+  }
+  .itemlist.hover-enabled tr div:hover, .select{
+    background-color: var(--trietary);
+  }
+  .select{
+    font-weight: bold;
+  }
+  #min_btn, #rsz_btn, #cls_btn, #go_btn, #rf_btn, #hm_btn, #themeswitch {
+    float: right;
+  }
+  #bck_btn, #fwd_btn, #up_btn, #mn_btn, #nWPanelButton, #cutPanelButton, #copyPanelButton, #delPanelButton,#newfilPanelButton, #newfolPanelButton #pastePanelButton{
+    float: left;
+  }
+  .itemRow{
+    width: -webkit-fill-available;
+    padding: 10px;
+  }
+  .itemNameText{
+    padding: 0px;
+    white-space: nowrap;
+    width: min-content;
+    margin: 0px;
+  }
+  .panelItem{
+    width: 60px;
+    height: 105px;
+    margin-right: 5px;
+  }
+  .panelItemSubject{
+    padding: 8px;
+    height: 40px;
+    width: 40px;
+  }
+  .panelItemSubject img{
+    filter: invert(var(--icon-trans));
+    height: 40px;
+    width: 40px;
+  }
+  .panelItemText{
+    width: 50px;
+    height: 35px;
+    font-size: 13px;
+    text-align: center;
+  }
+  .btmbtnText{
+    padding: 8px;
+    padding-left: 8px;
+    white-space: nowrap;
+    text-align: center;
+  }
+  #warn-holder{
+    margin: 8px;
+  }
+  .btmbtn{
+    display: flex;
+    width: -webkit-fill-available;
+    height: 35px;
+  }
+  .item, .context-item{
+    height: 35px;
+    padding: 0px;
+    display: flex;
+  }
+  .item img, .btmbtn img, .context-item img, .topbtn img, .subject{
+    filter: invert(var(--icon-trans));
+    padding: 8.5px;
+  }
+  .subject-holder{
+    height: 96px;
+    width: 96px;
+    margin: auto;
+  }
+  .topbtn{
+    height: 35px;
+    width: 35px;
+    -webkit-app-region: no-drag;
+  }
+  .topbtn:hover, #pathbox:hover, .context-item:hover, .btmbtn:hover, .panelItem:hover {
+    background-color: var(--trietary);
+  }
+  #context.show{
+    visibility: visible;
+    position: absolute;
+    background-color:  var(--primary);
+    height: 210px;
+    width: 150px;
+    box-shadow: 0px 10px 10px var(--shadow), 10px 5px 10px var(--shadow-fade);
+  }
+  #context{
+    visibility: hidden;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 0;
+    box-shadow: none;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--primary); 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--secondary); 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--trietary); 
+  }
+  ::-webkit-scrollbar-corner{
+    background: var(--primary)
+  }

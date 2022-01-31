@@ -1,0 +1,31 @@
+{
+  "name": "fileex",
+  "version": "1.0.0",
+  "description": "A new and universal file manager built for the way you work.",
+  "main": "./bin/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "build": {
+    "appId": "com.example.electron-boilerplate",
+    "files": [
+      "app/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "resources"
+    },
+    "extraFiles": [
+      "credentials"
+    ],
+    "publish": null
+  },
+  "author": "Jensin",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^4.1.0",
+    "jquery": "^3.5.0"
+  }
+}
