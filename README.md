@@ -4,12 +4,17 @@ Installation
 To build the current version of FileEX, make sure you have these prerequisites installed via your platform's command line:
 
 *node/npm
+
 *git
 
 *Then run 'git clone https://github.com/jensinthomas/FileEX.git '.
+
 *After that cd into FileEX and run:
+
  *npm i
+ 
  *npm audit fix (maybe needed)
+ 
  *npm start
 
 You can exit the window at any time by normal means, including from the command line itself (Ctrl + C), should the window freeze or the controls break.
